@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ola</h1>
+</body>
+<script>
+
+
+function calcularAgua(){ 
+    const nome = prompt("Qual seu nome?");
+    const peso = Number(prompt("Qual seu peso (kg)?"));
+    const idade = Number(prompt("Qual sua idade?"));
+    const aguaDia = parseFloat(prompt("Quantos litros de água você bebe por dia?"));
+
+    let metaAgua = 35 * peso;
+    let consumido = aguaDia * 1000; 
+    let falta = metaAgua - consumido;
+
+    if (consumido < metaAgua) {
+        alert(
+            "Olá, " + nome + "! Você tem " + idade + " anos, e ainda faltam " 
+            + falta.toFixed(0) + " mL de água para atingir a meta diária recomendada."
+        );
+    } else {
+        alert(
+            "Olá, " + nome + "! Você tem " + idade + " anos, e você já atingiu a meta diária recomendada de água."
+        );
+    }
+
+
+
+}
+
+function devedor(){
+const devedores = ["Jorge","João","Andressa","Millena"]
+    const nome = prompt("Qual seu nome?");
+    if(devedores.includes(nome)){
+        alert("Voçê está Devendo" + nome)
+    } else{
+        alert("Voçê não esta cadastrado no sistema")
+    }
+}
+devedor()
+</script>
+</html>
