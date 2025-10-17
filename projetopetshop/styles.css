@@ -1,0 +1,121 @@
+/* 🌿 Paleta suave e alegre */
+:root {
+  --cor-primaria: #ffb6b9;   /* Rosa suave */
+  --cor-secundaria: #fae3d9; /* Creme pastel */
+  --cor-destaque: #bbded6;   /* Verde-água */
+  --cor-texto: #444;
+  --cor-fundo: #fffdfc;
+}
+
+/* 🌸 Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+/* 🐾 Cabeçalho */
+header {
+  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-destaque));
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+/* 🐶 Menu */
+nav {
+  background: var(--cor-secundaria);
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  color: var(--cor-destaque);
+  transform: scale(1.1);
+}
+
+/* 🛁 Seções principais */
+section {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  text-align: center;
+  color: var(--cor-primaria);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+/* 🐕 Cards de serviço */
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  margin: 1rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.card img {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* 🩷 Botão principal */
+button, .btn {
+  background: var(--cor-destaque);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button:hover, .btn:hover {
+  background: var(--cor-primaria);
+  transform: scale(1.05);
+}
+
+/* 🐾 Rodapé */
+footer {
+  background: var(--cor-secundaria);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 3px solid var(--cor-primaria);
+}

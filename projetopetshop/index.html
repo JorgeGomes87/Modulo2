@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet shop Amigo Fiel</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+  /* 🌸 Cores suaves e alegres */
+  :root {
+    --cor-primaria: #f8a3a6;
+    --cor-secundaria: #f7873d;
+    --cor-destaque: #218159;
+    --cor-texto: #e0953f;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    color: var(--cor-texto);
+    /* 🐾 Fundo mais visível + animação suave */
+    background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+                url("pet01.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: moveBackground 20s ease-in-out infinite alternate;
+  }
+
+  /* ✨ Animação leve de movimento no fundo */
+  @keyframes moveBackground {
+    0% {
+      background-position: center;
+    }
+    50% {
+      background-position: top;
+    }
+    100% {
+      background-position: bottom;
+    }
+  }
+
+  header {
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-destaque));
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .banner {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #555;
+  }
+
+  .banner h1 {
+    font-size: 2.3rem;
+    color: var(--cor-primaria);
+    text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+  }
+
+  .banner h3 {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    color: #2eb67d;
+    background: rgba(255,255,255,0.8);
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  form {
+    background: rgba(255, 255, 255, 0.9);
+    max-width: 500px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  label {
+    font-weight: 500;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  .btn {
+    margin-top: 2rem;
+    background: var(--cor-destaque);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  }
+
+  .btn:hover {
+    background: var(--cor-primaria);
+    transform: scale(1.05);
+  }
+    h2 {
+        color: var(--cor-primaria);
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+h3 {
+    color: var(--cor-destaque);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  footer {
+    background: var(--cor-secundaria);
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    color: #555;
+    font-size: 0.9rem;
+  }
+  </style>
+</head>
+
+<body>
+  <header>Pet shop Amigo Fiel</header>
+
+  <section class="banner">
+    <h1>Bem-vindo ao Pet Shop Amigo Fiel!</h1>
+    <h3>Seu pet merece o melhor cuidado e carinho.</h3>
+  </section>
+
+  <form>
+    <h2>Cadastre seu Pet </h2> <h2>Escolha um dos Nossos Serviços </h2>
+    <h3>Dados do Tutor</h3>
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="endereco">Endereço:</label>
+    <input type="text" id="endereco" name="endereco" required>
+
+    <label for="telefone">Telefone:</label>
+    <input type="tel" id="telefone" name="telefone" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <h3>Dados do Pet</h3>
+
+    <label for="nomePet">Nome do Pet:</label>
+    <input type="text" id="nomePet" name="nomePet" required>
+
+    <label for="tipoPet">Tipo de Pet:</label>
+    <input type="text" id="tipoPet" name="tipoPet" required>
+
+    <label for="racaPet">Raça do Pet:</label>
+    <input type="text" id="racaPet" name="racaPet" required>
+
+    <label for="idadePet">Idade do Pet:</label>
+    <input type="number" id="idadePet" name="idadePet" required>
+
+    <h3>Serviços</h3>
+
+    <label for="servico">Selecione o serviço desejado:</label>
+    <select id="servico" name="servico" required>
+      <option value="">--Selecione--</option>
+      <option value="banho">Banho</option>
+      <option value="tosa">Tosa</option>
+      <option value="consultaVeterinaria">Consulta Veterinária</option>
+      <option value="vacina">Vacina</option>
+      <option value="outros">Outros</option>
+    </select>
+
+    <button class="btn">Conheça nossos serviços</button>
+  </form>
+
+  <footer>
+    &copy; 2024 Pet Shop Amigo Fiel. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
