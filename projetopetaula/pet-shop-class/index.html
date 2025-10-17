@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff8f2;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #f8fcfb;
+            min-height: 100vh;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Header  */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+            url('https://www.wellpetclinica.com.br/imagens/informacoes/consulta-cachorro-preco-01.jpg');
+            background-size: cover;
+            background-position:  center;
+            background-color: #ebeeed;
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            justify-content: flex-end; 
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            
+            font-size: 2.2rem;
+            font-weight: 500;
+            background-color: rgba(69, 71, 69, 0.85);
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 8px rgba(245, 241, 241, 0.2);
+            letter-spacing: 0.5px;
+        }
+        
+        /* Main */
+        main {
+            padding: 3rem 2rem;
+        }
+        
+        /* Form */
+        .pet-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .form-section {
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background-color: #99C1B9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-section h2 {
+            color: #101312;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #4C191B;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #444;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        /* Checkboxes */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.5rem;
+            cursor: pointer;
+        }
+        
+        /* Buttons */
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background-color: tomato;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e04e2e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: #757575;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #616161;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #530d0d;
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+        
+        /* Responsividade  */
+        @media (max-width: 1024px) {
+            header {
+                padding: 5rem 2rem;
+            }
+            
+            header h1 {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 4rem 1.5rem;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+                padding: 0.4rem 1.2rem;
+            }
+            
+            main {
+                padding: 2rem 1.5rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                padding: 3rem 1rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+                padding: 0.3rem 1rem;
+            }
+            
+            main {
+                padding: 1.5rem 1rem;
+            }
+            
+            .form-section {
+                padding: 1rem;
+            }
+            
+            .form-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Pet Shop Amigo Fiel</h1>
+                <p class="subtitle">Cuidamos do seu pet com amor e dedicação</p>
+            </div>
+        </header>
+        
+        <main>
+            <form class="pet-form">
+                <section class="form-section">
+                    <h2>Informações do Pet</h2>
+                    <div class="form-group">
+                        <label for="pet-name">Nome do Pet</label>
+                        <input type="text" id="pet-name" name="pet-name" placeholder="Digite o nome do seu pet">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pet-type">Tipo de Animal</label>
+                            <select id="pet-type" name="pet-type">
+                                <option value="">Selecione</option>
+                                <option value="dog">Cachorro</option>
+                                <option value="cat">Gato</option>
+                                <option value="bird">Pássaro</option>
+                                <option value="other">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pet-breed">Raça</label>
+                            <input type="text" id="pet-breed" name="pet-breed" placeholder="Raça do seu pet">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pet-age">Idade</label>
+                            <input type="number" id="pet-age" name="pet-age" placeholder="Idade em anos">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pet-weight">Peso (kg)</label>
+                            <input type="number" id="pet-weight" name="pet-weight" placeholder="Peso em kg" step="0.1">
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="form-section">
+                    <h2>Serviços Desejados</h2>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="services" value="banho"> Banho e Tosa
+                        </label>
+                        <label>
+                            <input type="checkbox" name="services" value="vacina"> Medicamentos
+                        </label>
+                        <label>
+                            <input type="checkbox" name="services" value="vacinacao"> Vacinação
+                        </label>
+                        <label>
+                            <input type="checkbox" name="services" value="consulta"> Consulta Veterinária
+                        </label>
+                        <label>
+                            <input type="checkbox" name="services" value="hospedagem"> Hospedagem
+                        </label>
+                        <label>
+                            <input type="checkbox" name="services" value="adestramento"> Adestramento
+                        </label>
+                    </div>
+                </section>
+                
+                <section class="form-section">
+                    <h2>Observações</h2>
+                    <div class="form-group">
+                        <label for="observations">Alguma informação adicional sobre seu pet?</label>
+                        <textarea id="observations" name="observations" rows="4" placeholder="Comportamento, alergias, medicações..."></textarea>
+                    </div>
+                </section>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Agendar Serviços</button>
+                    <button type="reset" class="btn btn-secondary">Limpar Formulário</button>
+                </div>
+            </form>
+        </main>
+        
+        <footer>
+            <p>Pet Shop Amigo Fiel &copy; 2023 - Todos os direitos reservados</p>
+            <p>Telefone: (021)266-2222 Email: contato@amigofiel.com
+        </footer>
+    </div>
+</body>
+</html>
